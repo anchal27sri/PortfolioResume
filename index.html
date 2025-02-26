@@ -54,11 +54,11 @@
             text-align: left;
             margin-top: 10px;
         }
-        .projects-container {
+        .projects-container, .publications-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 5px;
+            gap: 20px; /* Increased gap between cards */
             margin-top: 5px;
         }
         .project-card {
@@ -91,6 +91,35 @@
             text-decoration: none;
             font-weight: bold;
         }
+        .publication-card {
+            width: 280px;
+            text-align: center;
+            padding: 25px; /* Added padding */
+            background: #F8F9FA;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            position: relative;
+            height: 280px; /* Make the publication cards square */
+            color: black; /* Make text black */
+            text-decoration: none; /* Remove underline */
+        }
+        .publication-card:hover {
+            background: #e0f7fa;
+        }
+        .publication-card h3 {
+            color: black; /* Ensure text is black */
+        }
+        h2 {
+            font-size: 2em; /* Increased font size */
+        }
+        .publications-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px; /* Increased gap between cards */
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -104,33 +133,40 @@
         <div class="job" onclick="toggleDetails('microsoft-details')">
             <h3>Microsoft India - Software Engineer (Jan 2023 - Present)</h3>
             <div id="microsoft-details" class="job-details">
-                <ul>
-                    <li>Developed and enhanced Microsoft Defender Android App, improving security features and UX.</li>
-                    <li>Optimized app performance, resulting in a 25% speed increase and 30% higher user engagement.</li>
-                    <li>Integrated Singular SDK for marketing analytics, boosting ad efficiency.</li>
-                    <li>Created an automated crash analysis system, reducing crash rates to below 0.1%.</li>
-                    <li>Led the migration of the application to support Android 15.</li>
+                <img src="/images/microsoftLogo.png" alt="Microsoft Logo" style="width: 100px; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); display: none;">
+                <ul style="margin-right: 120px;">
+                    <li>Microsoft Defender Android Application: Worked extensively on building Microsoft’s own antivirus app Microsoft Defender for Android. Extensively revamped the app’s UI, performance improvement by 25%, adding new features, etc. The improvement in the app's UI brought 30% user engagement of users on the app.</li>
+                    <li>Integrated Singular SDK for keeping track of advertisement camps and help marketing teams get better data related to app installs and user conversion rates.</li>
+                    <li>Involved in supporting the app for Android 15. Successfully upgraded AGP, SDKs, etc. required for the migration.</li>
+                    <li>Owner and developer of automated crash analysis and alert systems. This automation pipeline runs everyday and looks out for any increasing crashes and alerts the team before it crosses the threshold. Helped in mitigating crash rate to below 0.1%.</li>
+                    <li>Handled various customer issues(ICM) as onCall-Engineer and provided good SLAs.</li>
                 </ul>
+                <p style="text-align: center; margin-right: 120px;"><strong>Tech Stack:</strong> Android, Java, Kotlin, Jetpack Compose, Python, Azure Pipelines, Azure DevOps, MVVM, Hilt, Robolectric, etc.</p>
             </div>
         </div>
         <div class="job" onclick="toggleDetails('samsung-details')">
             <h3>Samsung R&D - Senior Engineer (Dec 2021 - Dec 2022)</h3>
             <div id="samsung-details" class="job-details">
-                <ul>
-                    <li>Worked on the 5G Icon Event Simulator, increasing unit testing efficiency by 90%.</li>
-                    <li>Resolved critical cellular and Wi-Fi handover issues for flagship Samsung devices.</li>
-                    <li>Developed network simulation tools to enhance mobile performance testing.</li>
+                <img src="/images/samsungLogo.png" alt="Samsung Logo" style="width: 100px; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); display: none;">
+                <ul style="margin-right: 120px;">
+                    <li>5G Icon Event Simulator: Implemented event based Network event Simulator for 5G use cases. The simulator sent fake events to mimic actual network changes like network switching, tower switching, data off, device idle, etc. and checked if the network status icon on the status bar is being properly changed or not. Resulted in 90% increase in efficiency of unit testing workflow and reduced dev errors.</li>
+                    <li>Resolved all the incoming issues related to cellular data and wifi handover scenarios for samsung flagship mobiles.</li>
+                    <li>Worked on to increase the downloading speed by 80% using redsockets library to join two data streams in the network layer of android devices. (Patent in progress)</li>
                 </ul>
+                <p style="text-align: center; margin-right: 120px;"><strong>Tech Stack:</strong> Java, AOSP, Android Studio, Eclipse</p>
             </div>
         </div>
         <div class="job" onclick="toggleDetails('sandvine-details')">
             <h3>Sandvine Technologies - Software Development Engineer II (Aug 2020 - Dec 2021)</h3>
             <div id="sandvine-details" class="job-details">
-                <ul>
-                    <li>Implemented distributed internet traffic shaping to optimize bandwidth usage.</li>
-                    <li>Filed patents improving network traffic prioritization by 44%.</li>
-                    <li>Enhanced fair-split distribution in network traffic, leading to a more efficient load balancing system.</li>
+                <img src="/images/sandvineLogo.png" alt="Sandvine Logo" style="width: 100px; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); display: none;">
+                <ul style="margin-right: 120px;">
+                    <li>Multi-Priority Across Cluster: Implemented and owned distributed shaping of internet traffic based on priority. Filed a patent for the feature. Accuracy of the feature increased by 44%.</li>
+                    <li>Fairsplit Across Cluster: Extended the fairsplit feature in a distributed environment. Filed a patent for the same. Accuracy increased by 45%.</li>
+                    <li>Mentored an intern who later got PPO from the company.</li>
+                    <li>Worked on multiple streams projects, helped others in resolving bugs and resolved critical customer issues.</li>
                 </ul>
+                <p style="text-align: center; margin-right: 120px;"><strong>Tech Stack:</strong> C, C++, Docker, Linux, Git & GitLab</p>
             </div>
         </div>
     </section>
@@ -156,6 +192,29 @@
         </div>
     </section>
     
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-details">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/8e/IIT_%28ISM%29_Dhanbad_Logo.svg" alt="IIT (ISM) Dhanbad Logo" style="width: 100px; margin-bottom: 10px;">
+            <h3>Indian Institute of Technology (Indian School of Mines), Dhanbad</h3>
+            <p>Bachelor of Technology in Computer Science and Engineering (2016-2020)</p>
+        </div>
+    </section>
+    
+    <section id="publications">
+        <h2>Publications</h2>
+        <div class="publications-container">
+            <a href="https://media.licdn.com/dms/document/media/v2/D562DAQFgLHqZrHA9Dw/profile-treasury-document-pdf-analyzed/profile-treasury-document-pdf-analyzed/0/1720758988354?e=1741219200&v=beta&t=rjT6VUV8vBdagyexfILTHCA8rrsNMOU4DDJlTaMEBVM" target="_blank" class="publication-card">
+                <img src="/images/fairsplit.png" alt="Fair-Share Principles" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">
+                <h3>SYSTEM AND METHOD FOR MANAGING NETWORK TRAFFIC USING FAIR-SHARE PRINCIPLES</h3>
+            </a>
+            <a href="https://media.licdn.com/dms/document/media/v2/D562DAQE4BkCSBt2_Cw/profile-treasury-document-pdf-analyzed/profile-treasury-document-pdf-analyzed/0/1720758890346?e=1741219200&v=beta&t=D1VjeldoaegUf-r6Qr69SUW-PNjd2AOtg8nw4Jd1tOc" target="_blank" class="publication-card">
+                <img src="/images/distributedSystem.png" alt="Distributed Environment" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">
+                <h3>SYSTEM AND METHOD FOR PRIORITIZING NETWORK TRAFFIC IN A DISTRIBUTED ENVIRONMENT</h3>
+            </a>
+        </div>
+    </section>
+    
     <footer>
         <p>Contact Me:</p>
         <p>Email: <a href="mailto:srivastavaanchal000@gmail.com">srivastavaanchal000@gmail.com</a></p>
@@ -166,8 +225,15 @@
 <script>
     function toggleDetails(id) {
         var details = document.getElementById(id);
+        var img = details.querySelector('img');
         if (details) {
-            details.style.display = (details.style.display === 'none' || details.style.display === '') ? 'block' : 'none';
+            if (details.style.display === 'none' || details.style.display === '') {
+                details.style.display = 'block';
+                img.style.display = 'block';
+            } else {
+                details.style.display = 'none';
+                img.style.display = 'none';
+            }
         }
     }
 </script>
